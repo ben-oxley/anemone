@@ -9,6 +9,7 @@ namespace anemone{
         private transmitPowerMax:number = +13;//dBm (+13dBm (RFM69W), +20dBm (RFM69HW))
         private messages:FutureMessage[] = [];
         private sequenceID = 'a';
+        private colour:Colour = new Colour(0,0,0);
         
         constructor(handler:MessageHandler,address:string,position:Point){
             this.handler = handler;
@@ -48,6 +49,10 @@ namespace anemone{
 
         public getPosition():Point{
             return this.position;
+        }
+
+        public setColour(colour:Colour){
+            this.colour = colour;
         }
         
     }
